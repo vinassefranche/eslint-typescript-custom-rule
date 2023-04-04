@@ -22,12 +22,14 @@ const myRule: TSESLint.RuleModule<MessageIds> = {
         return context.report({
           node: node.callee,
           messageId: 'messageIdForSomeFailure',
+          fix: fixer => fixer.replaceText(node.callee, 'fooBar')
         });
       }
       if (node.callee.name === 'bar') {
         return context.report({
           node: node.callee,
           messageId: 'messageIdForSomeOtherFailure',
+          fix: fixer => fixer.replaceText(node.callee, 'fooBar')
         });
       }
 

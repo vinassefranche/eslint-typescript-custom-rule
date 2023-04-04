@@ -14,10 +14,12 @@ ruleTester.run('my-rule', myRule, {
     {
       code: 'foo()',
       errors: [{ messageId: 'messageIdForSomeFailure' }],
+      output: 'fooBar()',
     },
     {
       code: 'bar()',
       errors: [{ messageId: 'messageIdForSomeOtherFailure' }],
+      output: 'fooBar()',
     },
   ],
 });
