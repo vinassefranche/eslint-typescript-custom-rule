@@ -10,7 +10,6 @@ const myRule: TSESLint.RuleModule<MessageIds> = {
       messageIdForSomeFailure: 'Error message for some failure',
       messageIdForSomeOtherFailure: 'Error message for some other failure',
     },
-    fixable: 'code',
     schema: [], // no options
   },
   create: context => ({
