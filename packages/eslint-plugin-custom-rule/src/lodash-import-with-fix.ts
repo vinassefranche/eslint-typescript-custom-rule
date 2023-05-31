@@ -11,19 +11,11 @@ const lodashImportWithFix: TSESLint.RuleModule<'defaultMessage'> = {
     schema: [], // no options
   },
   create: context => ({
-    ImportSpecifier: node => {
-      if (
-        !(
-          node.parent &&
-          node.parent.type === AST_NODE_TYPES.ImportDeclaration &&
-          node.parent.source.value === 'lodash'
-        )
-      ) {
+    ImportDeclaration: node => {
+      if (node.source.value !== 'lodash') {
         return;
       }
-      const parent = node.parent;
-
-      const importedMethods = parent.specifiers
+      const importedMethods = node.specifiers
         .map(specifier => {
           return specifier.type === AST_NODE_TYPES.ImportSpecifier
             ? specifier.imported.name
@@ -31,19 +23,16 @@ const lodashImportWithFix: TSESLint.RuleModule<'defaultMessage'> = {
         })
         .filter((specifier): specifier is string => specifier !== null);
 
-      const current = node.imported.name;
-
-      if (importedMethods[0] !== current) {
-        // we report all imported methods when handling the first one
+      if (importedMethods.length === 0) {
         return;
       }
 
       return context.report({
-        node: parent.source,
+        node: node.source,
         messageId: 'defaultMessage',
         fix: fixer => {
           return fixer.replaceText(
-            parent,
+            node,
             importedMethods
               .map(name => `import ${name} from "lodash/${name}";`)
               .join('\n'),
