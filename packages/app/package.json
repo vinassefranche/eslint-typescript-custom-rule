@@ -5,6 +5,7 @@
   "module": "esm/index.js",
   "private": true,
   "devDependencies": {
+    "@types/lodash": "^4.14.195",
     "@typescript-eslint/parser": "^5.57.0",
     "eslint": "^8.37.0",
     "eslint-plugin-custom-rule": "workspace:*",
@@ -12,5 +13,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .ts ./src"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
