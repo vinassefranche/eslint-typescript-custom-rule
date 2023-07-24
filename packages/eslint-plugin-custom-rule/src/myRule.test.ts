@@ -1,10 +1,10 @@
-import { ESLintUtils } from '@typescript-eslint/utils';
+import { RuleTester } from '@typescript-eslint/rule-tester';
 
 import myRule from './myRule';
 
 const parserResolver = require.resolve('@typescript-eslint/parser');
 
-const ruleTester = new ESLintUtils.RuleTester({
+const ruleTester = new RuleTester({
   parser: parserResolver as any, // yarn 2+ shenanigans
 });
 

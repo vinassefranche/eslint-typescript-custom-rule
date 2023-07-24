@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.1.0",
+    "@typescript-eslint/rule-tester": "^6.1.0",
     "eslint": "^8.45.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"

@@ -379,6 +379,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/rule-tester@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@typescript-eslint/rule-tester@npm:6.1.0"
+  dependencies:
+    "@typescript-eslint/typescript-estree": 6.1.0
+    "@typescript-eslint/utils": 6.1.0
+    ajv: ^6.10.0
+    lodash.merge: 4.6.2
+    semver: ^7.5.4
+  peerDependencies:
+    "@eslint/eslintrc": ">=2"
+    eslint: ">=8"
+  checksum: 7ab0cf10bd1aec9a4e8d7e0666b54cbb46fdbcb4b799dcb14ac0eda17f2d9aa19e5822d8813b8c0f2f1f342da070804c6124c9bbaac2ee607e585b2e469817a7
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/scope-manager@npm:6.1.0":
   version: 6.1.0
   resolution: "@typescript-eslint/scope-manager@npm:6.1.0"
@@ -414,7 +430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^6.1.0":
+"@typescript-eslint/utils@npm:6.1.0, @typescript-eslint/utils@npm:^6.1.0":
   version: 6.1.0
   resolution: "@typescript-eslint/utils@npm:6.1.0"
   dependencies:
@@ -1006,6 +1022,7 @@ __metadata:
   resolution: "eslint-plugin-custom-rule@workspace:packages/eslint-plugin-custom-rule"
   dependencies:
     "@typescript-eslint/parser": ^6.1.0
+    "@typescript-eslint/rule-tester": ^6.1.0
     "@typescript-eslint/utils": ^6.1.0
     eslint: ^8.45.0
     typescript: ^5.1.6
@@ -1617,7 +1634,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.merge@npm:^4.6.2":
+"lodash.merge@npm:4.6.2, lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
